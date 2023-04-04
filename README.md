@@ -1,6 +1,10 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a><br>
   <a href="https://github.com/suppressf0rce/mobile-marketplace-app-backend/actions/workflows/node.js.yml"><img src="https://github.com/suppressf0rce/mobile-marketplace-app-backend/actions/workflows/node.js.yml/badge.svg?branch=master" /></a>
+  <a href="https://codecov.io/gh/suppressf0rce/mobile-marketplace-app-backend" > 
+ <img src="https://codecov.io/gh/suppressf0rce/mobile-marketplace-app-backend/branch/master/graph/badge.svg?token=P3YPA9ZUUO"/> 
+ <a href="https://suppressf0rce.github.io/mobile-marketplace-app-backend/" target="_blank"><img src="https://github.com/suppressf0rce/mobile-marketplace-app-backend/blob/master/documentation/images/coverage-badge-documentation.svg" alt="DocumentationCoverage"/></a>
+ </a>
 </p>
 
 ## Description
