@@ -39,4 +39,4 @@ $ npm run test:cov
 ```
 
 # License
-This product is under the AGPL 3.0. See the [LICENSE](LICENSE) for mor details.
+This product is under the AGPL 3.0. See the [LICENSE](LICENSE) for more details.
