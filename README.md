@@ -4,7 +4,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript backend application for mobile marketplace app
+[Nest](https://github.com/nestjs/nest) backend application written in typescript for mobile marketplace app
 
 ## Installation
 
@@ -37,3 +37,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+# License
+This product is under the AGPL 3.0. See the [LICENSE](LICENSE) for mor details.
