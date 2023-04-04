@@ -1,8 +1,7 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a><br>
+  <a href="https://github.com/suppressf0rce/mobile-marketplace-app-backend/actions/workflows/node.js.yml"><img src="https://github.com/suppressf0rce/mobile-marketplace-app-backend/actions/workflows/node.js.yml/badge.svg?branch=master" /></a>
 </p>
-[![Node.js CI](https://github.com/suppressf0rce/mobile-marketplace-app-backend/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/suppressf0rce/mobile-marketplace-app-backend/actions/workflows/node.js.yml)
 
 ## Description
 
