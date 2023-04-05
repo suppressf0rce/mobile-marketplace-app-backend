@@ -1,89 +1,11 @@
-# Bug-related issues
-- name: bug
-  color: FF0000
-  description: This issue is a bug that needs to be fixed.
-  pattern:
-    - "**/*.js"
-    - "**/*.jsx"
-    - "**/*.ts"
-    - "**/*.tsx"
-
-# Enhancement-related issues
-- name: enhancement
-  color: 00FF00
-  description: This issue is an enhancement or feature request.
-  pattern:
-    - "**/*.js"
-    - "**/*.jsx"
-    - "**/*.ts"
-    - "**/*.tsx"
-
-# Documentation-related issues
-- name: documentation
-  color: 0075ca
-  description: This issue is related to documentation.
-  pattern:
-    - "**/*.md"
-    - "**/*.txt"
-
-# Maintenance-related issues
-- name: maintenance
-  color: FFD700
-  description: This issue is related to maintenance or upkeep.
-  pattern:
-    - "**/*.js"
-    - "**/*.jsx"
-    - "**/*.ts"
-    - "**/*.tsx"
-
-# Security-related issues
-- name: security
-  color: FFA500
-  description: This issue is related to security.
-  pattern:
-    - "**/*.js"
-    - "**/*.jsx"
-    - "**/*.ts"
-    - "**/*.tsx"
-
-# Question-related issues
-- name: question
-  color: FFC0CB
-  description: This issue is a question that needs to be answered.
-  pattern:
-    - "**/*.js"
-    - "**/*.jsx"
-    - "**/*.ts"
-    - "**/*.tsx"
-
-# Chore-related issues
-- name: chore
-  color: 008000
-  description: This issue is a chore or non-user-facing task.
-  pattern:
-    - "**/*.js"
-    - "**/*.jsx"
-    - "**/*.ts"
-    - "**/*.tsx"
-
-# Dependency-related issues
-- name: dependency
-  color: 6e5baa
-  description: This issue is related to a dependency upgrade or management.
-  pattern:
-    - "**/package.json"
-    - "**/yarn.lock"
-    - "**/package-lock.json"
-
-# Testing - related issues
-- name: "testing"
-  color: "ff69b4"
-  description: "This issue is related to testing."
-  pattern:
-    - "**/*.test.js"
-    - "**/*.test.ts"
-    - "**/*.spec.js"
-    - "**/*.spec.ts"
-    - "**/*.e2e-spec.ts"
-    - "**/*.e2e-spec.js"
-    - "**/*.e2e.json"
+labels:
+  - name: "bug"
+    pattern: "(?i)\\b(bug|error|issue)\\b"
+  - name: "enhancement"
+    pattern: "(?i)\\b(improvement|enhancement|feature)\\b"
+  - name: "documentation"
+    pattern: "(?i)\\b(doc|documentation)\\b"
+  - name: "question"
+    pattern: "(?i)\\b(question|help)\\b"
+  - name: "test"
+    pattern: "(?i)\\b(test|testing)\\b"
