@@ -9,3 +9,8 @@ labels:
     pattern: "(?i)\\b(question|help)\\b"
   - name: "test"
     pattern: "(?i)\\b(test|testing)\\b"
+files:
+  - "**/*.md"
+  - "**/*.txt"
+  - "**/*.ts"
+  - "**/*.json"
