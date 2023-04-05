@@ -1,0 +1,18 @@
+bug:
+  description: This issue is a bug that needs to be fixed.
+  color: ff0000
+feature:
+  description: This issue is a new feature that needs to be implemented.
+  color: 00ff00
+documentation:
+  description: This issue is related to documentation.
+  color: 0052cc
+ui:
+  description: This issue is related to the user interface.
+  color: ffa500
+backend:
+  description: This issue is related to the backend.
+  color: 008000
+testing:
+  description: This issue is related to testing.
+  color: ff69b4
