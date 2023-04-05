@@ -66,7 +66,16 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@root/(.*)$": "<rootDir>/../$1",
+      "^@/(.*)$": "<rootDir>/../src/$1",
+      "^@app/(.*)$": "<rootDir>/../src/app/$1",
+      "^@config/(.*)$": "<rootDir>/../src/config/$1",
+      "^@database/(.*)$": "<rootDir>/../src/database/$1",
+      "^@shared/(.*)$": "<rootDir>/../src/shared/$1",
+      "^@core/(.*)$": "<rootDir>/../src/core/$1"
+    }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
