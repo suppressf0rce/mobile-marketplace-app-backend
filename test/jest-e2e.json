@@ -13,6 +13,6 @@
     "^@config/(.*)$": "<rootDir>/../src/config/$1",
     "^@database/(.*)$": "<rootDir>/../src/database/$1",
     "^@shared/(.*)$": "<rootDir>/../src/shared/$1",
-    "^@core/(.*)$": "<rootDir>/../src/shared/$1"
+    "^@core/(.*)$": "<rootDir>/../src/core/$1"
   }
 }
