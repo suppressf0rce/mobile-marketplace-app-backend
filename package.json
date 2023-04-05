@@ -1,10 +1,10 @@
 {
   "name": "mobile-marketplace-app-backend",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Dejan Radmanovic",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "AGPL 3.0",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -24,6 +24,7 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.3.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
