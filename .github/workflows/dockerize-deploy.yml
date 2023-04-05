@@ -1,0 +1,39 @@
+name: Deploy Docker Image to GitHub Packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log in to Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: docker.pkg.github.com
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: docker.pkg.github.com/suppressf0rce/mobile-marketplace-app-backend:${{ github.ref }}
+    
+      # - name: Deploy to Production
+      #   uses: appleboy/ssh-action@v0.18.0
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     password: ${{ secrets.SSH_PASSWORD }}
+      #     script: |
+      #       docker pull docker.pkg.github.com/<owner>/<repo-name>:${{ github.ref }}
+      #       docker stop <container-name>
+      #       docker rm <container-name>
+      #       docker run -d --name <container-name> -p <host-port>:3000 docker.pkg.github.com/<owner>/<repo-name>:${{ github.ref }}
