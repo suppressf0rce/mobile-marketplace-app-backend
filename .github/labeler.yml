@@ -1,16 +1,10 @@
-labels:
-  - name: "bug"
-    pattern: "(?i)\\b(bug|error|issue)\\b"
-  - name: "enhancement"
-    pattern: "(?i)\\b(improvement|enhancement|feature)\\b"
-  - name: "documentation"
-    pattern: "(?i)\\b(doc|documentation)\\b"
-  - name: "question"
-    pattern: "(?i)\\b(question|help)\\b"
-  - name: "test"
-    pattern: "(?i)\\b(test|testing)\\b"
-files:
-  - "**/*.md"
-  - "**/*.txt"
-  - "**/*.ts"
-  - "**/*.json"
+bug:
+  - '(bug|error|issue)'
+enhancement:
+  - '(improvement|enhancement|feature)'
+documentation:
+  - '(doc|documentation)'
+question:
+  - '(question|help)'
+test:
+  - '(test|testing|tests)'
