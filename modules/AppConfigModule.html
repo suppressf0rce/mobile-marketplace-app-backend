@@ -28,138 +28,81 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content controller">
+               <div class="content module">
                    <div class="content-data">
 
 
 
-
-
 <ol class="breadcrumb">
-  <li>Controllers</li>
-  <li >AppController</li>
+    <li>Modules</li>
+    <li >AppConfigModule</li>
 </ol>
 
+
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="c-info">
+
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app.controller.ts</code>
+            <code>src/config/app.config.module.ts</code>
         </p>
 
 
 
+        <p class="comment">
+            <h3>Description</h3>
+        </p>
+        <p class="comment">
+            <p>The AppConfigModule class imports and exports the configModule.</p>
+
+        </p>
 
 
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
 
 
-            <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#getHello" >getHello</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-            <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getHello"></a>
-                    <span class="name">
-                        <span ><b>getHello</b></span>
-                        <a href="#getHello"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getHello()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get()<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/app/app.controller.ts:9</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    </div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get } from &#x27;@nestjs/common&#x27;;
-import { AppService } from &#x27;@app/app.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
+import { ConfigModule } from &#x27;@nestjs/config&#x27;;
+import { configuration } from &#x27;@config/configuration&#x27;;
+import { validationSchema } from &#x27;@config/validation&#x27;;
 
-@Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+/** This code is creating a configuration module using the &#x60;ConfigModule&#x60; from the &#x60;@nestjs/config&#x60;
+package. The &#x60;forRoot&#x60; method is used to configure the module with the following options: */
+const configModule &#x3D; ConfigModule.forRoot({
+  isGlobal: true,
+  envFilePath: &#x60;src/config/env/${process.env.NODE_ENV || &#x27;development&#x27;}.env&#x60;,
+  load: [configuration],
+  validationSchema,
+});
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-}
+/** The AppConfigModule class imports and exports the configModule. */
+@Module({
+  imports: [configModule],
+  exports: [configModule],
+})
+export class AppConfigModule {}
 </code></pre>
     </div>
 </div>
+
 
 
 
@@ -201,8 +144,8 @@ export class AppController {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppController.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppConfigModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
