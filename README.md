@@ -29,6 +29,26 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## Running the app with docker-compose
+**Prequisites**
+1. Docker Installed
+2. docker-compose installed
+
+You can run this application using docker compose which will automatically setup your database and application for you with next commands
+
+```bash
+# Basic run
+docker-compose up
+
+# Run application proccess in background
+docker-compose up -d
+
+# Run application and rebuild it
+docker-compose up --build
+
+# Stopping application from background
+docker-compose down
+```
 
 ## Test
 
