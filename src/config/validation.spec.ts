@@ -15,6 +15,7 @@ describe('validationSchema', () => {
       DB_USER: 'postgres',
       DB_PASSWORD: 'password',
       DB_TYPE: 'postgres',
+      DB_SYNCHRONIZE_ENTITIES: false,
     };
 
     const result = validationSchema.validate(validConfig);
@@ -52,6 +53,7 @@ describe('validationSchema', () => {
       DB_DB: 'mydb',
       DB_USER: 'postgres',
       DB_PASSWORD: 'password',
+      DB_SYNCHRONIZE_ENTITIES: false,
     };
 
     expect(validationSchema.validate(invalidConfig).error).toBeDefined();

@@ -20,7 +20,7 @@ configuration values obtained from a ConfigService. */
         password: configService.get<string>('db.password'),
         database: configService.get<string>('db.name'),
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        synchronize: true,
+        synchronize: configService.get<boolean>('db.synchronize'),
       }),
       inject: [ConfigService],
     }),
