@@ -50,6 +50,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "29.5.0",
+    "jest-mock-extended": "^3.0.4",
     "prettier": "^2.3.2",
     "source-map-support": "^0.5.20",
     "sqlite3": "^5.1.6",
@@ -74,8 +75,10 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coveragePathIgnorePatterns" : [
-      "src/main.ts", "/.*\\.module\\.ts$"
+    "coveragePathIgnorePatterns": [
+      "src/main.ts",
+      "/.*\\.module\\.ts$",
+      "/.*\\.entity\\.ts$"
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",

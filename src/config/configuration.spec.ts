@@ -40,6 +40,7 @@ describe('configuration', () => {
     process.env.DB_TYPE = 'postgres';
     process.env.DB_USER = 'postgres';
     process.env.DB_PASSWORD = 'password';
+    process.env.DB_SYNCHRONIZE_ENTITIES = 'false';
     const config = configuration();
     expect(config.db.host).toEqual('localhost');
     expect(config.db.port).toEqual(5432);
@@ -47,5 +48,6 @@ describe('configuration', () => {
     expect(config.db.user).toEqual('postgres');
     expect(config.db.password).toEqual('password');
     expect(config.db.type).toEqual('postgres');
+    expect(config.db.synchronize).toEqual(true);
   });
 });

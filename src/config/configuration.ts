@@ -18,5 +18,6 @@ export const configuration = () => ({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     type: process.env.DB_TYPE,
+    synchronize: Boolean(process.env.DB_SYNCHRONIZE_ENTITIES),
   },
 });
