@@ -179,7 +179,7 @@ configuration values obtained from a ConfigService. */
         password: configService.get&lt;string&gt;(&#x27;db.password&#x27;),
         database: configService.get&lt;string&gt;(&#x27;db.name&#x27;),
         entities: [__dirname + &#x27;/../**/*.entity{.ts,.js}&#x27;],
-        synchronize: true,
+        synchronize: configService.get&lt;boolean&gt;(&#x27;db.synchronize&#x27;),
       }),
       inject: [ConfigService],
     }),

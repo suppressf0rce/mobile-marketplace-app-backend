@@ -142,6 +142,7 @@ package. The <code>forRoot</code> method is used to configure the module with th
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     type: process.env.DB_TYPE,
+    synchronize: Boolean(process.env.DB_SYNCHRONIZE_ENTITIES),
   },
 })</code>
                     </td>
@@ -186,6 +187,7 @@ including app name, description, version, and database credentials.</p>
   DB_USER: Joi.string().required(),
   DB_PASSWORD: Joi.string().required(),
   DB_TYPE: Joi.string().required().valid(&#x27;postgres&#x27;, &#x27;sqlite&#x27;),
+  DB_SYNCHRONIZE_ENTITIES: Joi.boolean().required(),
 })</code>
                     </td>
                 </tr>
