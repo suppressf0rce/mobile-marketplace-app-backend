@@ -7,11 +7,11 @@ import { Permission } from '@shared/core-user-module/entities/permission.entity'
 import { RoleService } from '@shared/core-user-module/services/role.service';
 import { PermissionService } from '@shared/core-user-module/services/permission.service';
 
-/** This is a module in a TypeScript application that imports and exports services related to users,
+/** This is a shared module in a TypeScript application that imports and exports services related to users,
 roles, and permissions using TypeORM. */
 @Module({
   imports: [TypeOrmModule.forFeature([User, Role, Permission])],
   providers: [UserService, RoleService, PermissionService],
   exports: [UserService, RoleService, PermissionService],
 })
-export class UserModule {}
+export class UserCoreModule {}
