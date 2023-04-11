@@ -70,16 +70,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CoreModule.html" data-type="entity-link" >CoreModule</a>
                             </li>
                             <li class="link">
-                                <a href="modules/UserModule.html" data-type="entity-link" >UserModule</a>
+                                <a href="modules/UserCoreModule.html" data-type="entity-link" >UserCoreModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-UserModule-a330fc65ad52c116ce2ea4ff77aaa9caaaed01c14d0fe96f1ec7a078f7ddc1386034c89f9a74eec45bb33d4fa93daf48f9beb9cd804ac5238cd7e6b9c625f277"' : 'data-target="#xs-injectables-links-module-UserModule-a330fc65ad52c116ce2ea4ff77aaa9caaaed01c14d0fe96f1ec7a078f7ddc1386034c89f9a74eec45bb33d4fa93daf48f9beb9cd804ac5238cd7e6b9c625f277"' }>
+                                        'data-target="#injectables-links-module-UserCoreModule-2155e7db7785b73d35b0fb3a74eb38e373b2a71dae560c27045418fdb6fce94432efeea1241f5949996e1bea057995b5bb63fe4032f315b24899ca59c9fc6a6f"' : 'data-target="#xs-injectables-links-module-UserCoreModule-2155e7db7785b73d35b0fb3a74eb38e373b2a71dae560c27045418fdb6fce94432efeea1241f5949996e1bea057995b5bb63fe4032f315b24899ca59c9fc6a6f"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-a330fc65ad52c116ce2ea4ff77aaa9caaaed01c14d0fe96f1ec7a078f7ddc1386034c89f9a74eec45bb33d4fa93daf48f9beb9cd804ac5238cd7e6b9c625f277"' :
-                                        'id="xs-injectables-links-module-UserModule-a330fc65ad52c116ce2ea4ff77aaa9caaaed01c14d0fe96f1ec7a078f7ddc1386034c89f9a74eec45bb33d4fa93daf48f9beb9cd804ac5238cd7e6b9c625f277"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserCoreModule-2155e7db7785b73d35b0fb3a74eb38e373b2a71dae560c27045418fdb6fce94432efeea1241f5949996e1bea057995b5bb63fe4032f315b24899ca59c9fc6a6f"' :
+                                        'id="xs-injectables-links-module-UserCoreModule-2155e7db7785b73d35b0fb3a74eb38e373b2a71dae560c27045418fdb6fce94432efeea1241f5949996e1bea057995b5bb63fe4032f315b24899ca59c9fc6a6f"' }>
                                         <li class="link">
                                             <a href="injectables/PermissionService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PermissionService</a>
                                         </li>
