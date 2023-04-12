@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@app/app.module';
 import { setupSwagger } from '@config/swagger.config';
 import { ConfigService } from '@nestjs/config';
+import { VersioningType } from '@nestjs/common';
 
 /**
  * This function sets up a NestJS application with a global prefix, Swagger documentation, and listens
@@ -12,6 +13,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   setupSwagger(app);
   app.setGlobalPrefix('api');
+  app.enableVersioning({ type: VersioningType.URI });
   const port = configService.get<number>('app.port');
   await app.listen(port);
 }
