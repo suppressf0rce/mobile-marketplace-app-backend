@@ -11,7 +11,10 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
   app:
-    build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: development
     ports:
       - "3000:3000"
     depends_on:
