@@ -70,6 +70,23 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CoreModule.html" data-type="entity-link" >CoreModule</a>
                             </li>
                             <li class="link">
+                                <a href="modules/HealthModule.html" data-type="entity-link" >HealthModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#controllers-links-module-HealthModule-ab6aabcc93781cb11e47ea7f131b07063294c8eb950ab3fb1bf1aa4a499a7662ce17fffb91f17cccf04b4e0e7879866c77516045f81177466a5e011dc709670a"' : 'data-target="#xs-controllers-links-module-HealthModule-ab6aabcc93781cb11e47ea7f131b07063294c8eb950ab3fb1bf1aa4a499a7662ce17fffb91f17cccf04b4e0e7879866c77516045f81177466a5e011dc709670a"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-HealthModule-ab6aabcc93781cb11e47ea7f131b07063294c8eb950ab3fb1bf1aa4a499a7662ce17fffb91f17cccf04b4e0e7879866c77516045f81177466a5e011dc709670a"' :
+                                            'id="xs-controllers-links-module-HealthModule-ab6aabcc93781cb11e47ea7f131b07063294c8eb950ab3fb1bf1aa4a499a7662ce17fffb91f17cccf04b4e0e7879866c77516045f81177466a5e011dc709670a"' }>
+                                            <li class="link">
+                                                <a href="controllers/HealthController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HealthController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
                                 <a href="modules/UserCoreModule.html" data-type="entity-link" >UserCoreModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
