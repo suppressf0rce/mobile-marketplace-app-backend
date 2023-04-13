@@ -1,6 +1,8 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import {
   DiskHealthIndicator,
+  HealthCheckResult,
   HealthCheckService,
   MemoryHealthIndicator,
   TypeOrmHealthIndicator,
@@ -10,6 +12,7 @@ import { ThrottlerGuard } from '@nestjs/throttler';
 /** The HealthController class checks the health of various components including the database, memory,
  and disk. */
 @Controller('health')
+@ApiTags('Health')
 @UseGuards(ThrottlerGuard)
 export class HealthController {
   constructor(
@@ -30,7 +33,7 @@ export class HealthController {
    * representing the results of each check
    */
   @Get()
-  async check() {
+  async check(): Promise<HealthCheckResult> {
     return this.health.check([
       /* istanbul ignore next */
       () => this.db.pingCheck('database', { timeout: 300 }),
