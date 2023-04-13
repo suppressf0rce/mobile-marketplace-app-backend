@@ -141,8 +141,8 @@ and disk.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/modules/health/health.controller.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/modules/health/health.controller.ts:36</a></div>
                 </td>
             </tr>
 
@@ -159,7 +159,7 @@ representing the results of each check</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
+                        <b>Returns : </b>    <code>Promise&lt;HealthCheckResult&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -179,8 +179,10 @@ representing the results of each check</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, UseGuards } from &#x27;@nestjs/common&#x27;;
+import { ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import {
   DiskHealthIndicator,
+  HealthCheckResult,
   HealthCheckService,
   MemoryHealthIndicator,
   TypeOrmHealthIndicator,
@@ -190,6 +192,7 @@ import { ThrottlerGuard } from &#x27;@nestjs/throttler&#x27;;
 /** The HealthController class checks the health of various components including the database, memory,
  and disk. */
 @Controller(&#x27;health&#x27;)
+@ApiTags(&#x27;Health&#x27;)
 @UseGuards(ThrottlerGuard)
 export class HealthController {
   constructor(
@@ -210,7 +213,7 @@ export class HealthController {
    * representing the results of each check
    */
   @Get()
-  async check() {
+  async check(): Promise&lt;HealthCheckResult&gt; {
     return this.health.check([
       /* istanbul ignore next */
       () &#x3D;&gt; this.db.pingCheck(&#x27;database&#x27;, { timeout: 300 }),
