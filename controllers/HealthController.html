@@ -141,8 +141,8 @@ and disk.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/modules/health/health.controller.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/modules/health/health.controller.ts:33</a></div>
                 </td>
             </tr>
 
@@ -178,17 +178,19 @@ representing the results of each check</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, UseGuards } from &#x27;@nestjs/common&#x27;;
 import {
   DiskHealthIndicator,
   HealthCheckService,
   MemoryHealthIndicator,
   TypeOrmHealthIndicator,
 } from &#x27;@nestjs/terminus&#x27;;
+import { ThrottlerGuard } from &#x27;@nestjs/throttler&#x27;;
 
 /** The HealthController class checks the health of various components including the database, memory,
  and disk. */
 @Controller(&#x27;health&#x27;)
+@UseGuards(ThrottlerGuard)
 export class HealthController {
   constructor(
     private health: HealthCheckService,
