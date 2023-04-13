@@ -1,14 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
 import {
   DiskHealthIndicator,
   HealthCheckService,
   MemoryHealthIndicator,
   TypeOrmHealthIndicator,
 } from '@nestjs/terminus';
+import { ThrottlerGuard } from '@nestjs/throttler';
 
 /** The HealthController class checks the health of various components including the database, memory,
  and disk. */
 @Controller('health')
+@UseGuards(ThrottlerGuard)
 export class HealthController {
   constructor(
     private health: HealthCheckService,

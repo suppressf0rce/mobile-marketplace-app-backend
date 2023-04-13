@@ -1,13 +1,15 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { HealthController } from './health.controller';
-import { mockDeep, MockProxy } from 'jest-mock-extended';
+import { Reflector } from '@nestjs/core';
 import {
   DiskHealthIndicator,
   HealthCheckService,
+  HealthCheckStatus,
   MemoryHealthIndicator,
   TypeOrmHealthIndicator,
-  HealthCheckStatus,
 } from '@nestjs/terminus';
+import { Test, TestingModule } from '@nestjs/testing';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { mockDeep, MockProxy } from 'jest-mock-extended';
+import { HealthController } from './health.controller';
 
 describe('HealthController', () => {
   let healthController: HealthController;
@@ -15,6 +17,12 @@ describe('HealthController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [HealthController],
+      imports: [
+        ThrottlerModule.forRoot({
+          ttl: 60,
+          limit: 10,
+        }),
+      ],
       providers: [
         {
           provide: HealthCheckService,
@@ -32,6 +40,8 @@ describe('HealthController', () => {
           provide: DiskHealthIndicator,
           useValue: mockDeep<DiskHealthIndicator>(),
         },
+        Reflector,
+        ThrottlerGuard,
       ],
     }).compile();
 
