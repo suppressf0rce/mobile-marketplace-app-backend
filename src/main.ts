@@ -5,6 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
 import helmet from 'helmet';
 import * as csurf from 'csurf';
+import * as cookieParser from 'cookie-parser';
 
 /**
  * This function sets up a NestJS application with a global prefix, Swagger documentation, and listens
@@ -18,8 +19,16 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.use(helmet());
   app.enableCors();
-  app.use(csurf());
   setupSwagger(app);
+  app.use(cookieParser());
+  app.use(csurf({ cookie: { sameSite: true } }));
+  app.use((req: any, res: any, next: any) => {
+    const token = req.csrfToken();
+    res.cookie('XSRF-TOKEN', token);
+    res.locals.csrfToken = token;
+
+    next();
+  });
   const port = configService.get<number>('app.port');
   await app.listen(port);
 }
