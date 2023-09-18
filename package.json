@@ -21,7 +21,7 @@
     "docs": "compodoc -p compodoc.tsconfig.json -d docs"
   },
   "dependencies": {
-    "@casl/ability": "^6.4.0",
+    "@casl/ability": "^6.5.0",
     "@nestjs/axios": "^2.0.0",
     "@nestjs/common": "^9.4.0",
     "@nestjs/config": "^2.3.1",
